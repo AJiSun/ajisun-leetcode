@@ -1,8 +1,0 @@
-
-gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(×»æ8ù¥òÜŒ/
-T
-squid:S106"9Replace this use of System.out or System.err by a logger.(×°¬Å8ù¥òÜŒ/
-Tsquid:UnusedPrivateMethod"+Remove this unused private "addNum" method.(¦ä”/8ù¥òÜŒ/
-Fsquid:S1481"+Remove this unused "newOne" local variable.(ÉÛF8ù¥òÜŒ/
-Ysquid:UselessImportCheck"1Remove this unused import 'java.util.LinkedList'.(»Äð18ù¥òÜŒ/
-Asquid:S1172"&Remove these unused method parameters.(¦ä”/8ù¥òÜŒ/

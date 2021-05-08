@@ -1,17 +1,0 @@
-
-Gsquid:S1481"+Remove this unused "result" local variable.(Εª”­8Σª§η/
-Dsquid:S1148"#Use a logger to log this exception.(€ΙΤ…ύÿÿÿÿ8Σª§η/
-Dsquid:S1148"#Use a logger to log this exception.(€ΙΤ…ύÿÿÿÿ8Σª§η/
-€squid:S1149"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(«Δβόÿÿÿÿ8Σª§η/
-Y
-squid:S106"9Replace this use of System.out or System.err by a logger.(•ζφΣÿÿÿÿÿ8Σª§η/
-isquid:S2259"HA "NullPointerException" could be thrown; "connection" is nullable here.(•™πεύÿÿÿÿ8Σª§η/
-Dsquid:S1148"#Use a logger to log this exception.(€ΙΤ…ύÿÿÿÿ8Σª§η/
-Dsquid:S1148"#Use a logger to log this exception.(€ΙΤ…ύÿÿÿÿ8Σª§η/
-Y
-squid:S106"9Replace this use of System.out or System.err by a logger.(Ι•ήθϋÿÿÿÿ8Σª§η/
-Dsquid:S1148"#Use a logger to log this exception.(€ΙΤ…ύÿÿÿÿ8Σª§η/
-Dsquid:S1148"#Use a logger to log this exception.(€ΙΤ…ύÿÿÿÿ8Σª§η/
-T
-squid:S106"9Replace this use of System.out or System.err by a logger.(ªΌ’¥8Σª§η/
-hsquid:S2095"LUse try-with-resources or close this "BufferedWriter" in a "finally" clause.(ημΌ¤8Σª§η/

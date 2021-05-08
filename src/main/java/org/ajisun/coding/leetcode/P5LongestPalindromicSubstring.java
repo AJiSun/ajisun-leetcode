@@ -53,6 +53,7 @@ public class P5LongestPalindromicSubstring {
 
     public static void main(String[] args){
         Solution solution = new P5LongestPalindromicSubstring().new Solution();
+        System.out.println(solution.longestPalindrome2("bbaabb"));
 
     }
     class Solution {
@@ -61,7 +62,102 @@ public class P5LongestPalindromicSubstring {
 
             return "";
         }
+
+
+        /**
+         * 中心扩展算法
+         * @param s
+         * @return
+         */
+        public String longestPalindrome2(String s) {
+            if (s == null || s.length() < 1) {
+                return "";
+            }
+            int start=0;
+            int end = 0;
+            for (int i=0;i<s.length();i++){
+                // 奇数
+                int len1 = expandAroundCenter(s,i,i);
+                //偶数
+                int len2 = expandAroundCenter(s,i,i+1);
+
+                int len = Math.max(len1,len2);
+                if (len> end-start){
+                    start = i - (len-1)/2;
+                    end = i+len/2;
+                }
+
+            }
+
+            return s.substring(start, end + 1);
+        }
+
+        private int expandAroundCenter(String s, int left, int right){
+            while (left>=0 && right<s.length() && s.charAt(left)==s.charAt(right)){
+                left--;
+                right++;
+            }
+            return (right-1) - (left+1) +1;
+        }
+
+
+
+
+
+
+
+        /**
+         * 暴力遍历(从短到长)
+         * @param s
+         * @return
+         */
+        public String longestPalindrome1(String s) {
+            String ans = "";
+            if (s==null || "".equals(s)){
+                return "";
+            }
+            if (s.length()==1){
+                return s;
+            }
+            int len = s.length();
+            for (int i=0;i<len;i++){
+                for (int j=i+1;j<=len;j++){
+                    // 截取子字符串
+                    String tmp = s.substring(i,j);
+                    if (isPalindromic(tmp) && tmp.length()>ans.length()){
+                        ans = tmp;
+                    }
+                }
+            }
+            return ans;
+        }
+
+        /**
+         * 依次取出字符串对比两边是否相同
+         * 从两边开始比对，如果有一个位置不相同就不是回文字符串
+         * @param s
+         * @return
+         */
+        private boolean isPalindromic(String s){
+            int len = s.length();
+            char[] chars = s.toCharArray();
+            for (int i=0;i<len/2;i++){
+                if (chars[i]!=chars[len-1-i]){
+                    return false;
+                }
+            }
+            return true;
+        }
+
+
+
     }
+
+
+
+
+
+
 
 
 }

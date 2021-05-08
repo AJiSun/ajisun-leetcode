@@ -1,0 +1,7 @@
+
+[
+squid:S1067"9Replace this use of System.out or System.err by a logger.(³é‡Ùşÿÿÿÿ8¹ëãÎğ.
+Wsquid:S2251/"9"i" is incremented and will never reach "stop condition".(Ñ¦ª‰8¹ëãÎğ.
+@squid:S2189/""Correct this loop's end condition.(Ñ¦ª‰8¹ëãÎğ.
+>squid:S1659" Declare "p3" on a separate line.(íÒ¹Ê8¹ëãÎğ.
+>squid:S1659" Declare "p2" on a separate line.(íÒ¹Ê8¹ëãÎğ.

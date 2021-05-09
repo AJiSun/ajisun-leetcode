@@ -74,17 +74,64 @@ public class P4MedianOfTwoSortedArrays {
     public static void main(String[] args){
         Solution solution = new P4MedianOfTwoSortedArrays().new Solution();
 
-        int[] nums1={1,2};
-        int[] nums2 ={3,4};
+        int[] nums1={1,2,9};
+        int[] nums2 ={3,4,5,9,10};
         System.out.println(solution.findMedianSortedArrays(nums1,nums2));
     }
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
+
+
+        /**
+         * 合并两个有序数组，然后获取中位数
+         * @param nums1
+         * @param nums2
+         * @return
+         */
         public double findMedianSortedArrays(int[] nums1, int[] nums2) {
-            int k = 0 ;
 
+            int [] newNum = new int[nums1.length+nums2.length];
+            int k = 0;
 
-            return 0L;
+            int i =0;
+            int j = 0;
+            while (i<nums1.length && j<nums2.length){
+
+                if (nums1[i]<=nums2[j]){
+                    newNum[k] = nums1[i];
+                    i++;
+                }else {
+                    newNum[k] = nums2[j];
+                    j++;
+                }
+                k++;
+            }
+
+            if (i<nums1.length){
+                for (int n=i;n<nums1.length;n++) {
+                    newNum[k] = nums1[n];
+                    k++;
+                }
+            }
+
+            if (j<nums2.length){
+                for (int n=j;n<nums2.length;n++) {
+                    newNum[k] = nums2[n];
+                    k++;
+                }
+            }
+
+            for (int m=0;m<newNum.length;m++){
+                System.out.println(newNum[m]);
+            }
+
+            int len = newNum.length;
+            if (len%2==0){
+                return  (double)(newNum[len/2-1] + newNum[len/2])/2L;
+            }else {
+                return  newNum[len/2];
+            }
+
         }
 
     }

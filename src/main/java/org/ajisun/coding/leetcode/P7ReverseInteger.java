@@ -43,12 +43,12 @@ package org.ajisun.coding.leetcode;
 //
 // -231 <= x <= 231 - 1
 /**
- * @Copyright (c) 2021. Hand Enterprise Solution Company. All right reserved.
+ * @Copyright (c) 2021. AJiSun. All right reserved.
  * @ProjectName: ajisun-leetcode
  * @PackageName: org.ajisun.coding.leetcode
  * @Date: 2021/5/11
  * @author: ajisun
- * @Email: jiguang.sun@hand-china.com
+ * @Email: xxxxx
  */
 public class P7ReverseInteger {
 
@@ -113,6 +113,7 @@ public class P7ReverseInteger {
             }
 
         }
+
 
 
         /**

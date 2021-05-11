@@ -54,8 +54,8 @@ public class P7ReverseInteger {
 
     public static void main(String[] args){
         Solution solution = new P7ReverseInteger().new Solution();
-        System.out.println(Integer.MAX_VALUE);
-//        System.out.println(solution.reverse(9646324351));
+//        System.out.println(Integer.MAX_VALUE);
+        System.out.println(solution.reverse2(847412));
     }
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
@@ -80,19 +80,59 @@ public class P7ReverseInteger {
             if (flag){
                 sb = new StringBuilder("-").append(sb);
             }
-                int res = Integer.parseInt(sb.toString());
 
+            try {
 
-            return res;
+             return Integer.parseInt(sb.toString());
+            }catch (Exception e){
+                    e.printStackTrace();
+                return 0;
+            }finally {
+
+            }
         }
 
 
         public int reverse1(int x){
+            if (x==0 || x>Integer.MAX_VALUE || x<Integer.MIN_VALUE){
+                return 0;
+            }
 
+            StringBuilder stringBuilder = new StringBuilder().append(x);
+            int flag = 1;
+            if (x<0){
+                stringBuilder.replace(0,1,"");
+                flag = -1;
+            }
 
+            try {
+                return  Integer.valueOf(stringBuilder.reverse().toString())*flag;
+            }catch (Exception e){
+                e.printStackTrace();
+                return  0;
+            }
 
-            return 0;
         }
+
+
+        /**
+         * 效率更高版本
+         * @param x
+         * @return
+         */
+        public int reverse2(int x){
+            int rev = 0;
+            while (x!=0){
+                if (rev < Integer.MIN_VALUE / 10 || rev > Integer.MAX_VALUE / 10) {
+                    return 0;
+                }
+                int digit = x % 10;
+                x /= 10;
+                rev = rev * 10 + digit;
+            }
+            return rev;
+        }
+
     }
 
 }

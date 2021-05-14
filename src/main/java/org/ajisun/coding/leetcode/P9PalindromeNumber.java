@@ -64,7 +64,7 @@ public class P9PalindromeNumber {
 
     public static void main(String[] args) {
         Solution solution = new P9PalindromeNumber().new Solution();
-        System.out.println(solution.isPalindrome2(1166811));
+        System.out.println(solution.isPalindrome(2147483647));
     }
 
     class Solution {

@@ -69,7 +69,6 @@ package org.ajisun.coding.leetcode;
 // 1 <= num <= 3999
 //
 // Related Topics 数学 字符串
-// 👍 616 👎 0
 
 /**
  * @Copyright (c) 2021. ajisun. All right reserved.

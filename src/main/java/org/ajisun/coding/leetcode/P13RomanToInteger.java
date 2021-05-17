@@ -74,7 +74,6 @@ package org.ajisun.coding.leetcode;
 // 关于罗马数字的详尽书写规则，可以参考 罗马数字 - Mathematics 。
 //
 // Related Topics 数学 字符串
-// 👍 1313 👎 0
 
 
 /**

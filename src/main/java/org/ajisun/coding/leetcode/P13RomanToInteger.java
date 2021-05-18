@@ -96,6 +96,11 @@ public class P13RomanToInteger {
 
     class Solution {
 
+        /**
+         * 加法
+         * @param s
+         * @return
+         */
         public int romanToInt(String s) {
             int[] values = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
             String[] roms = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
@@ -123,5 +128,37 @@ public class P13RomanToInteger {
 
             return count;
         }
+
+
+        Map<Character, Integer> symbolValues = new HashMap<Character, Integer>() {{
+            put('I', 1);
+            put('V', 5);
+            put('X', 10);
+            put('L', 50);
+            put('C', 100);
+            put('D', 500);
+            put('M', 1000);
+        }};
+
+        /**
+         * 加减法
+         * @param s
+         * @return
+         */
+        public int romanToInteger2(String s){
+                int ans = 0;
+                int n = s.length();
+                for (int i = 0; i < n; ++i) {
+                    int value = symbolValues.get(s.charAt(i));
+                    if (i < n - 1 && value < symbolValues.get(s.charAt(i + 1))) {
+                        ans -= value;
+                    } else {
+                        ans += value;
+                    }
+                }
+                return ans;
+            }
+
+
     }
 }

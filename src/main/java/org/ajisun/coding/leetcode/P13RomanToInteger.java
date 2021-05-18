@@ -76,6 +76,9 @@ package org.ajisun.coding.leetcode;
 // Related Topics 数学 字符串
 
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @Copyright (c) 2021. ajisun. All right reserved.
  * @ProjectName: ajisun-leetcode
@@ -85,18 +88,40 @@ package org.ajisun.coding.leetcode;
  * @Email: ajisun
  */
 public class P13RomanToInteger {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Solution solution = new P13RomanToInteger().new Solution();
 
-        System.out.println(solution.romanToInt("2"));
+        System.out.println(solution.romanToInt("MCMXCIV"));
     }
 
     class Solution {
 
         public int romanToInt(String s) {
+            int[] values = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+            String[] roms = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+            Map<String, Integer> map = new HashMap<String, Integer>();
+            for (int i = 0; i < values.length; i++) {
+                map.put(roms[i], values[i]);
+            }
+            int count = 0;
+            while (!"".equals(s)) {
+                if (s.length() > 1) {
+                    String rom = s.substring(0, 2);
+                    if (map.containsKey(rom)) {
+                        count += map.get(rom);
+                        s = s.replaceFirst(rom, "");
+                        continue;
+                    }
+                }
 
+                String rom = s.substring(0, 1);
+                if (map.containsKey(rom)) {
+                    count += map.get(rom);
+                    s = s.replaceFirst(rom, "");
+                }
+            }
 
-            return 0;
+            return count;
         }
     }
 }

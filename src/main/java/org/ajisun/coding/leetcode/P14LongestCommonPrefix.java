@@ -43,7 +43,7 @@ public class P14LongestCommonPrefix {
 
     public static void main(String[] args) {
         Solution solution = new P14LongestCommonPrefix().new Solution();
-        String[] strs = {"reflower","flow","flow"};
+        String[] strs = {"flower","flow","flight"};
         System.out.println(solution.longestCommonPrefix(strs));
     }
 
@@ -62,7 +62,7 @@ public class P14LongestCommonPrefix {
             while (len >= 0 && count!=strs.length) {
                 count = 0;
                 for (String st : strs) {
-                    if (!st.contains(minStr)) {
+                    if (!st.startsWith(minStr)) {
                         break;
                     } else {
                         count += 1;

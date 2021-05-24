@@ -103,9 +103,7 @@ public class P17LetterCombinationsOfAPhoneNumber {
 
 
             for(int i=0;i<mapStr.length();i++) {
-                //调用下一层递归，用文字很难描述，请配合动态图理解
                 sb.append(mapStr.charAt(i));
-                //如果是String类型做拼接效率会比较低
                 backtrack(str, index+1, sb);
                 sb.deleteCharAt(sb.length()-1);
             }

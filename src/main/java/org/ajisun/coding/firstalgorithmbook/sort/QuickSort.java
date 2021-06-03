@@ -25,6 +25,7 @@ public class QuickSort {
     public static void main(String[] args) {
         int[] nums = {5, 3, 8, 4, 2, 1, 9, 7, 6,500,100,300,200,400};
 
+
         childrenQuickSort(nums,0,nums.length-1);
         System.out.println(Arrays.toString(nums));
 
@@ -39,16 +40,17 @@ public class QuickSort {
             int j = right;
             while (i<j){
 
+                // 从右向左找，直到比基准值小
                 while ((i<j) && nums[j]>=pivot){
                     j--;
                 }
+                // 从左向右找，直到比基准值大
                 while ((i<j)&& nums[i]<=pivot){
                     i++;
                 }
 
-                if (nums[i]==nums[j] && i<j){
-                    i++;
-                }else{
+                // 如果不是同一个数，交换两个数
+                if (i!=j){
                     nums[i] = nums[i] ^ nums[j];
                     nums[j] = nums[i] ^ nums[j];
                     nums[i] = nums[i] ^ nums[j];
@@ -58,7 +60,6 @@ public class QuickSort {
 
             nums[left] = nums[i];
             nums[i] = pivot;
-            System.out.println(Arrays.toString(nums));
             childrenQuickSort(nums,left,j-1);
             childrenQuickSort(nums,i+1,right);
 
